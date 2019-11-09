@@ -1,3 +1,5 @@
 .idea
 algorithms-java/out
 *.class
+algorithms/cpp/.idea
+algorithms/cpp/cmake-build-debug
