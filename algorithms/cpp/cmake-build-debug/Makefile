@@ -123,32 +123,32 @@ leetcode/fast:
 	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/build
 .PHONY : leetcode/fast
 
-KMP/KMP.o: KMP/KMP.cpp.o
+BFPRT/BFPRT.o: BFPRT/BFPRT.cpp.o
 
-.PHONY : KMP/KMP.o
+.PHONY : BFPRT/BFPRT.o
 
 # target to build an object file
-KMP/KMP.cpp.o:
-	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/KMP/KMP.cpp.o
-.PHONY : KMP/KMP.cpp.o
+BFPRT/BFPRT.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/BFPRT/BFPRT.cpp.o
+.PHONY : BFPRT/BFPRT.cpp.o
 
-KMP/KMP.i: KMP/KMP.cpp.i
+BFPRT/BFPRT.i: BFPRT/BFPRT.cpp.i
 
-.PHONY : KMP/KMP.i
+.PHONY : BFPRT/BFPRT.i
 
 # target to preprocess a source file
-KMP/KMP.cpp.i:
-	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/KMP/KMP.cpp.i
-.PHONY : KMP/KMP.cpp.i
+BFPRT/BFPRT.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/BFPRT/BFPRT.cpp.i
+.PHONY : BFPRT/BFPRT.cpp.i
 
-KMP/KMP.s: KMP/KMP.cpp.s
+BFPRT/BFPRT.s: BFPRT/BFPRT.cpp.s
 
-.PHONY : KMP/KMP.s
+.PHONY : BFPRT/BFPRT.s
 
 # target to generate assembly for a file
-KMP/KMP.cpp.s:
-	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/KMP/KMP.cpp.s
-.PHONY : KMP/KMP.cpp.s
+BFPRT/BFPRT.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/BFPRT/BFPRT.cpp.s
+.PHONY : BFPRT/BFPRT.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... leetcode"
 	@echo "... edit_cache"
-	@echo "... KMP/KMP.o"
-	@echo "... KMP/KMP.i"
-	@echo "... KMP/KMP.s"
+	@echo "... BFPRT/BFPRT.o"
+	@echo "... BFPRT/BFPRT.i"
+	@echo "... BFPRT/BFPRT.s"
 .PHONY : help
 
 

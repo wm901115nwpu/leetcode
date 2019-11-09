@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/leetcode.dir/KMP/KMP.cpp.o  -o leetcode 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/leetcode.dir/BFPRT/BFPRT.cpp.o  -o leetcode 

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/KMP/KMP.cpp" "/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/cmake-build-debug/CMakeFiles/leetcode.dir/KMP/KMP.cpp.o"
+  "/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/BFPRT/BFPRT.cpp" "/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/cmake-build-debug/CMakeFiles/leetcode.dir/BFPRT/BFPRT.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

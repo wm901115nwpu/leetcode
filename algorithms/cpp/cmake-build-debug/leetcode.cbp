@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/KMP/KMP.cpp">
+		<Unit filename="/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/BFPRT/BFPRT.cpp">
 			<Option target="leetcode"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/CMakeLists.txt">

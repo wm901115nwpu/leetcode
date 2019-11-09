@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/KMP/KMP.cpp
+/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/BFPRT/BFPRT.cpp
 iostream
 -
 vector
 -
+iostream
+-
 string
+-
+algorithm
+-
+vector
 -
 
