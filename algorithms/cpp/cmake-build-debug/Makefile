@@ -123,32 +123,32 @@ leetcode/fast:
 	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/build
 .PHONY : leetcode/fast
 
-binarySearch/binarySearch.o: binarySearch/binarySearch.cpp.o
+KMP/KMP.o: KMP/KMP.cpp.o
 
-.PHONY : binarySearch/binarySearch.o
+.PHONY : KMP/KMP.o
 
 # target to build an object file
-binarySearch/binarySearch.cpp.o:
-	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/binarySearch/binarySearch.cpp.o
-.PHONY : binarySearch/binarySearch.cpp.o
+KMP/KMP.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/KMP/KMP.cpp.o
+.PHONY : KMP/KMP.cpp.o
 
-binarySearch/binarySearch.i: binarySearch/binarySearch.cpp.i
+KMP/KMP.i: KMP/KMP.cpp.i
 
-.PHONY : binarySearch/binarySearch.i
+.PHONY : KMP/KMP.i
 
 # target to preprocess a source file
-binarySearch/binarySearch.cpp.i:
-	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/binarySearch/binarySearch.cpp.i
-.PHONY : binarySearch/binarySearch.cpp.i
+KMP/KMP.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/KMP/KMP.cpp.i
+.PHONY : KMP/KMP.cpp.i
 
-binarySearch/binarySearch.s: binarySearch/binarySearch.cpp.s
+KMP/KMP.s: KMP/KMP.cpp.s
 
-.PHONY : binarySearch/binarySearch.s
+.PHONY : KMP/KMP.s
 
 # target to generate assembly for a file
-binarySearch/binarySearch.cpp.s:
-	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/binarySearch/binarySearch.cpp.s
-.PHONY : binarySearch/binarySearch.cpp.s
+KMP/KMP.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/KMP/KMP.cpp.s
+.PHONY : KMP/KMP.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... leetcode"
 	@echo "... edit_cache"
-	@echo "... binarySearch/binarySearch.o"
-	@echo "... binarySearch/binarySearch.i"
-	@echo "... binarySearch/binarySearch.s"
+	@echo "... KMP/KMP.o"
+	@echo "... KMP/KMP.i"
+	@echo "... KMP/KMP.s"
 .PHONY : help
 
 

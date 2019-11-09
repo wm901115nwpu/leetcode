@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/binarySearch/binarySearch.cpp
+/mnt/c/Users/unicorn/Desktop/leetcode/algorithms/cpp/KMP/KMP.cpp
 iostream
 -
 vector
+-
+string
 -
 
