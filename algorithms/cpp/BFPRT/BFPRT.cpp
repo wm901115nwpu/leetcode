@@ -1,12 +1,6 @@
 //
 // Created by unicorn on 2019/11/9.
 //
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-
 /*
  * 求一个数组的第k个大的数 O(N)
  *
@@ -127,7 +121,7 @@ public:
 
 int main()
 {
-    std::vector<int> vData={2,344,1,123,23,3,4,354,45,6,7,8,123,12,7};
+    std::vector<int> vData = {2,344,1,123,23,3,4,354,45,6,7,8,123,12,7};
     //std::vector<int> vData={2,1,3,4,6,7,7};
     CSolution cS1;
     //std::cout<<cS1.BFPRT(vData,0,vData.size()-1)<<std::endl;
