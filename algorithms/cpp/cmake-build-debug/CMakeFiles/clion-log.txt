@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/unicorn/MyProject/leetcode/algorithms/cpp
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/tmp.bidQ6R1PAE
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/unicorn/MyProject/leetcode/algorithms/cpp/cmake-build-debug
+-- Build files have been written to: /tmp/tmp.bidQ6R1PAE/cmake-build-debug

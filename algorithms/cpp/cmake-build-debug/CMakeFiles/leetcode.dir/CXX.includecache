@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/unicorn/MyProject/leetcode/algorithms/cpp/BFPRT/BFPRT.cpp
+/tmp/tmp.bidQ6R1PAE/3Sum/3Sum.cpp
+stdio.h
+-
 iostream
 -
-string
+vector
+-
+set
 -
 algorithm
--
-vector
 -
 

@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/unicorn/MyProject/leetcode/algorithms/cpp/BFPRT/BFPRT.cpp" "/Users/unicorn/MyProject/leetcode/algorithms/cpp/cmake-build-debug/CMakeFiles/leetcode.dir/BFPRT/BFPRT.cpp.o"
+  "/tmp/tmp.bidQ6R1PAE/3Sum/3Sum.cpp" "/tmp/tmp.bidQ6R1PAE/cmake-build-debug/CMakeFiles/leetcode.dir/3Sum/3Sum.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
