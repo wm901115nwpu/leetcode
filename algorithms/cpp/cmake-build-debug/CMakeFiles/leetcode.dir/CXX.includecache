@@ -6,10 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/Users/unicorn/MyProject/leetcode/algorithms/cpp/4Sum/4Sum.cpp
+/Users/unicorn/MyProject/leetcode/algorithms/cpp/3Sum/3Sum.cpp
+stdio.h
+-
 iostream
 -
 vector
+-
+set
 -
 algorithm
 -
