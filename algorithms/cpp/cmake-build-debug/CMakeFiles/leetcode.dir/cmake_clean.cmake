@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/leetcode.dir/3Sum/3Sum.cpp.o"
-  "leetcode.pdb"
+  "CMakeFiles/leetcode.dir/MorrisTraversal/MorrisTraversal.cpp.o"
   "leetcode"
+  "leetcode.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

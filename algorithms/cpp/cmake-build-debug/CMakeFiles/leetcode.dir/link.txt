@@ -1,1 +1,1 @@
-/usr/bin/c++   -g   CMakeFiles/leetcode.dir/3Sum/3Sum.cpp.o  -o leetcode -rdynamic 
+/Library/Developer/CommandLineTools/usr/bin/c++   -std=c++11 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/leetcode.dir/MorrisTraversal/MorrisTraversal.cpp.o  -o leetcode 

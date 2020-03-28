@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,14 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/tmp/tmp.bidQ6R1PAE/3Sum/3Sum.cpp
-stdio.h
--
+/Users/unicorn/MyProject/leetcode/algorithms/cpp/4Sum/4Sum.cpp
 iostream
 -
 vector
--
-set
 -
 algorithm
 -
