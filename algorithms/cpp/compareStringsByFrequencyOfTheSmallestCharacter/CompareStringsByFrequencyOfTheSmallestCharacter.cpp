@@ -11,7 +11,8 @@
  * Now, given string arrays queries and words, return an integer array answer, where each answer[i] is 
  * the number of words such that f(queries[i]) < f(W), where W is a word in words.
  * 
- * Example 1:
+ * Example 1: * Example 1:
+
  * 
  * Input: queries = ["cbd"], words = ["zaaaz"]
  * Output: [1]
