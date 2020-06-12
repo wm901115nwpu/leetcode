@@ -5,140 +5,194 @@
 
 using namespace std;
 
-struct TreeNode{
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+typedef int dataType;
+struct Node
+{
+    dataType val;
+    struct Node *left;
+    struct Node *right;
+
+    Node(dataType _val):
+            val(_val), left(NULL), right(NULL){}
 };
 
-// inorder Morris Traversal
-void inorderMorrisTraversal(TreeNode *root) {
-    TreeNode *cur = root, *prev = NULL;
-    while (cur != NULL)
-    {
-        if (cur->left == NULL)          // 1.
-        {
-            printf("%d ", cur->val);
-            cur = cur->right;
-        }
-        else
-        {
-            // find predecessor
-            prev = cur->left;
-            while (prev->right != NULL && prev->right != cur)
-                prev = prev->right;
-
-            if (prev->right == NULL)   // 2.a)
-            {
-                prev->right = cur;
-                cur = cur->left;
-            }
-            else                       // 2.b)
-            {
-                prev->right = NULL;
-                printf("%d ", cur->val);
-                cur = cur->right;
-            }
-        }
-    }
-}
-
-//preorder Morris Traversal
-void preorderMorrisTraversal(TreeNode *root) {
-    TreeNode *cur = root, *prev = NULL;
-    while (cur != NULL)
-    {
-        if (cur->left == NULL)
-        {
-            printf("%d ", cur->val);
-            cur = cur->right;
-        }
-        else
-        {
-            prev = cur->left;
-            while (prev->right != NULL && prev->right != cur)
-                prev = prev->right;
-
-            if (prev->right == NULL)
-            {
-                printf("%d ", cur->val);  // the only difference with inorder-traversal
-                prev->right = cur;
-                cur = cur->left;
-            }
-            else
-            {
-                prev->right = NULL;
-                cur = cur->right;
-            }
-        }
-    }
-}
-
-//postorder Morris Traversal
-void reverse(TreeNode *from, TreeNode *to) // reverse the tree nodes 'from' -> 'to'.
+// Morris中序遍历 (左 -> 根 -> 右)
+void MorrisInOrderTraverse(Node *head)
 {
-    if (from == to)
+    if (head == NULL)
+    {
         return;
-    TreeNode *x = from, *y = from->right, *z;
-    while (true)
-    {
-        z = y->right;
-        y->right = x;
-        x = y;
-        y = z;
-        if (x == to)
-            break;
-    }
-}
-
-void printReverse(TreeNode* from, TreeNode *to) // print the reversed tree nodes 'from' -> 'to'.
-{
-    reverse(from, to);
-
-    TreeNode *p = to;
-    while (true)
-    {
-        printf("%d ", p->val);
-        if (p == from)
-            break;
-        p = p->right;
     }
 
-    reverse(to, from);
-}
+    Node *p1 = head;
+    Node *p2 = NULL;
 
-void postorderMorrisTraversal(TreeNode *root) {
-    TreeNode dump(0);
-    dump.left = root;
-    TreeNode *cur = &dump, *prev = NULL;
-    while (cur)
+    while (p1 != NULL)
     {
-        if (cur->left == NULL)
+        p2 = p1->left;
+        if (p2 != NULL)
         {
-            cur = cur->right;
-        }
-        else
-        {
-            prev = cur->left;
-            while (prev->right != NULL && prev->right != cur)
-                prev = prev->right;
-
-            if (prev->right == NULL)
+            while(p2->right != NULL && p2->right != p1)
             {
-                prev->right = cur;
-                cur = cur->left;
+                p2 = p2->right;
+            }
+            if (p2->right == NULL)
+            {
+                p2->right = p1;		// 空闲指针
+                p1 = p1->left;
+                continue;
             }
             else
             {
-                printReverse(cur->left, prev);  // call print
-                prev->right = NULL;
-                cur = cur->right;
+                p2->right = NULL;
             }
         }
+        cout<<p1->val<<" ";
+        p1 = p1->right;
     }
 }
 
-int main(){
+// Morris前序遍历 (根 -> 左 -> 右)
+void MorrisPreOrderTraverse(Node *head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
 
+    Node *p1 = head;
+    Node *p2 = NULL;
+
+    while (p1 != NULL)
+    {
+        p2 = p1->left;
+        if (p2 != NULL)
+        {
+            while(p2->right != NULL && p2->right != p1)
+            {
+                p2 = p2->right;
+            }
+            if (p2->right == NULL)
+            {
+                p2->right = p1;		// 空闲指针
+                cout<<p1->val<<" ";	// 打印结点值的顺序稍微调整
+                p1 = p1->left;
+                continue;
+            }
+            else
+            {
+                p2->right = NULL;
+            }
+        }
+        else
+        {
+            cout<<p1->val<<" ";
+        }
+        p1 = p1->right;
+    }
+}
+
+// 逆序右边界
+Node* reverseEdge(Node *head)
+{
+    Node *pre = NULL;
+    Node *next = NULL;
+
+    while(head != NULL)
+    {
+        next = head->right;
+        head->right = pre;
+        pre = head;
+        head = next;
+    }
+
+    return pre;
+}
+
+// 逆序打印左子树右边界
+void printEdge(Node *head)
+{
+    Node *lastNode = reverseEdge(head);
+    Node *cur = lastNode;
+
+    while (cur != NULL)
+    {
+        cout<<cur->val<<" ";
+        cur = cur->right;
+    }
+    reverseEdge(lastNode);
+}
+
+// Morris后序遍历 (左 -> 右 -> 根)
+void MorrisPostOrderTraverse(Node *head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+
+    Node *p1 = head;
+    Node *p2 = NULL;
+
+    while (p1 != NULL)
+    {
+        p2 = p1->left;
+        if (p2 != NULL)
+        {
+            while(p2->right != NULL && p2->right != p1)
+            {
+                p2 = p2->right;
+            }
+            if (p2->right == NULL)
+            {
+                p2->right = p1;		// 空闲指针
+                p1 = p1->left;
+                continue;
+            }
+            else
+            {
+                p2->right = NULL;
+                printEdge(p1->left);
+            }
+        }
+        p1 = p1->right;
+    }
+    printEdge(head);
+}
+
+void buildBinTree(Node **head)
+{
+    dataType _val;
+    cin>>_val;
+
+    if (_val == -1)
+    {
+        *head = NULL;
+    }
+    else
+    {
+        *head = (Node*)malloc(sizeof(Node));
+        (*head)->val = _val;
+        buildBinTree(&(*head)->left);
+        buildBinTree(&(*head)->right);
+    }
+}
+
+int main(void)
+{
+    Node *head;
+    buildBinTree(&head);
+    cout<<"前序遍历序列为:";
+    MorrisPreOrderTraverse(head);
+    cout<<endl;
+
+    cout<<"中序遍历序列为:";
+    MorrisInOrderTraverse(head);
+    cout<<endl;
+
+    cout<<"后序遍历序列为:";
+    MorrisPostOrderTraverse(head);
+    cout<<endl;
+
+    return 0;
 }
