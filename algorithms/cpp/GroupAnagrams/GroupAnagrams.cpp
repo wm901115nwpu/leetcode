@@ -19,6 +19,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
@@ -49,7 +50,6 @@ void printString(vector<vector<string> > &matrix)
         }
         printf("}\n");
     }
-//    cout << endl;
 }
 
 int main(){
