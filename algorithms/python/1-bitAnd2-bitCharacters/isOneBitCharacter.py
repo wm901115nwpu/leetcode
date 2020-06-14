@@ -10,8 +10,7 @@ class Solution(object):
             if i >= len(bits): return False
             if i == len(bits) - 1: return True
 def main():
-    fun1 = Solution()
-    print(fun1.isOneBitCharacter([1, 0, 1, 0]))
+    print(Solution().isOneBitCharacter([1, 0, 0]))
 
 if __name__ == '__main__':
     main()
