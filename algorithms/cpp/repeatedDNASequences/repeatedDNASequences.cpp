@@ -27,6 +27,7 @@
 #include <vector>
 #include <functional>
 #include <unordered_map>
+#include <algorithm>
 using namespace std;
 
 const int MAX_LEN = 10;
@@ -83,9 +84,25 @@ vector<string> findRepeatedDnaSequences_02(string s) {
     return result;
 }
 
+vector<string> findRepeatedDnaSequences03(string s) {
+    vector<string> res;
+    unordered_map<string, int> S;
+    for (int i = 0; i + 10 <= s.size(); i ++ )
+    {
+        printf("i = %d\n", i);
+        string str = s.substr(i, 10);
+        cout << str << endl;
+        cout << S[str] << endl;
+        if (S[str] == 1) res.push_back(str);
+        S[str] ++ ;
+    }
+    sort(res.begin(), res.end());
+    return res;
+}
+
 vector<string> findRepeatedDnaSequences(string s) {
     srand(time(0));
-    if (random()%2){
+    if (rand()%2){
         return findRepeatedDnaSequences_01(s);
     }
     return findRepeatedDnaSequences_02(s);
@@ -101,9 +118,11 @@ void printVector( vector<string> v ) {
 
 int main(int argc, char** argv)
 {
-    string s =  "GAGAGAGAGAGAG" ;
+//    string s =  "GAGAGAGAGAGAG" ;
+    string s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
+    cout << "s size is: " << s.size() << endl;
     if (argc > 1){
         s = argv[1];
     }
-    printVector(findRepeatedDnaSequences(s));
+    printVector(findRepeatedDnaSequences03(s));
 }
