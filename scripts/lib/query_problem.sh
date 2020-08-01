@@ -81,6 +81,16 @@ function detect_os()
     echo ${platform}
 }
 
+function install_brew()
+{
+    TRUE_CMD=`which true`
+    brew=`type -P brew || ${TRUE_CMD}`
+    if [ -z "${brew}" ]; then
+        echo "brew not found !"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    fi
+}
+
 function install_xidel()
 {
     echo "Install xidel ..."
@@ -97,7 +107,7 @@ function install_xidel()
     fi
 
     #install the xidel on Linux platform
-    xidel_ver=0.9.6
+    xidel_ver=0.9.8
     if [[ "$platform" == "linux" ]]; then
         hardware=`uname -m`
         xidel_tar=xidel-${xidel_ver}.linux64.tar.gz
@@ -111,7 +121,7 @@ function install_xidel()
         esac
         if [ ! -f ${xidel_tar} ]; then
             echo "Downloading xidel......"
-            curl -s -L https://jaist.dl.sourceforge.net/project/videlibri/Xidel/Xidel%20${xidel_ver}/${xidel_tar} -o ${xidel_tar}
+            curl -# -L https://github.com/benibela/xidel/releases/download/Xidel_${xidel_ver}/${xidel_tar} -o ${xidel_tar}
         fi
         tar -zxvf ${xidel_tar}
         sudo ./install.sh
@@ -120,13 +130,9 @@ function install_xidel()
     #install the xidel on MacOS platform
     #refer to: https://www.evernote.com/shard/s69/sh/ff1e78f3-a369-4855-b18f-6184ce789c45/f3511927d0fb356ce883835f2eb712e0
     if [[ "$platform" == "macos" ]]; then
-        echo "Downloading xidel......"
-        xidel_zip=xidel.zip
-        if [ ! -f ${xidel_zip} ]; then
-            curl -L https://www.evernote.com/shard/s69/sh/ff1e78f3-a369-4855-b18f-6184ce789c45/f3511927d0fb356ce883835f2eb712e0/res/de33e89a-cdc6-42b5-a476-32e2df1cf4bc/${xidel_zip} -o ${xidel_zip}
-        fi
-        unzip ${xidel_zip}
-        mv xidel /usr/local/bin/
+        install_brew
+        echo "brew install xidel..."
+        brew install xidel
     fi
 
     cd ..

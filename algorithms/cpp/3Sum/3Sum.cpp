@@ -26,6 +26,7 @@
 #include <vector>
 #include <set>
 #include <algorithm>
+
 using namespace std;
 
 
@@ -47,7 +48,7 @@ using namespace std;
 vector<vector<int> > threeSum(vector<int> &num) {
 
     vector< vector<int> > result;
-    if(num.size()==0 || num.size()==1 || num.size() == 2) return result;
+    if(num.size() == 0 || num.size() == 1 || num.size() == 2) return result;
 
     //sort the array, this is the key
     sort(num.begin(), num.end());
@@ -56,14 +57,14 @@ vector<vector<int> > threeSum(vector<int> &num) {
 
     for (int i=0; i<n-2; i++) {
         //skip the duplication
-        if (i>0 && num[i-1]==num[i]) continue;
+        if (i > 0 && num[i-1] == num[i]) continue;
         int a = num[i];
-        int low = i+1;
-        int high = n-1;
+        int low = i + 1;
+        int high = n - 1;
         while ( low < high ) {
             int b = num[low];
             int c = num[high];
-            if (a+b+c == 0) {
+            if (a + b + c == 0) {
                 //got the soultion
                 vector<int> v;
                 v.push_back(a);
@@ -72,17 +73,17 @@ vector<vector<int> > threeSum(vector<int> &num) {
                 result.push_back(v);
                 // Continue search for all triplet combinations summing to zero.
                 //skip the duplication
-                while(low<n-1 && num[low]==num[low+1]) low++; 
-                while(high>0 && num[high]==num[high-1]) high--; 
+                while(low < n - 1 && num[low] == num[low+1]) low++;
+                while(high > 0 && num[high] == num[high-1]) high--;
                 low++;
                 high--;
             } else if (a+b+c > 0) {
                 //skip the duplication
-                while(high>0 && num[high]==num[high-1]) high--;
+                while(high > 0 && num[high]==num[high-1]) high--;
                 high--;
-            } else{
+            } else {
                 //skip the duplication
-                while(low<n-1 && num[low]==num[low+1]) low++;
+                while(low < n-1 && num[low] == num[low+1]) low++;
                 low++;
             } 
         }
