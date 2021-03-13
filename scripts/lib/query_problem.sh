@@ -81,7 +81,7 @@ function detect_os()
     echo ${platform}
 }
 
-function install_brew()
+function install_brew() 
 {
     TRUE_CMD=`which true`
     brew=`type -P brew || ${TRUE_CMD}`

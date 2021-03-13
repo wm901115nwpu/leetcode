@@ -14,7 +14,7 @@ class Solution {
         int maxarea = Integer.MIN_VALUE;
 
         while (multiplier != 0) {
-
+       
             maxarea = Integer.max(maxarea, Integer.min(height[start], height[end]) * multiplier--);
             if (height[start] > height[end]) {
                 end--;

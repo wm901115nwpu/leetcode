@@ -1,6 +1,3 @@
-//
-// Created by 王盟 on 2020/10/4.
-//
 // Source : https://leetcode.com/problems/number-of-ways-to-split-a-string/
 // Author : Sudesh Chaudhary
 // Date   : 2020-10-01

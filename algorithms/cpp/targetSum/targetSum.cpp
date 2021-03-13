@@ -1,14 +1,11 @@
-//
-// Created by 王盟 on 2020/10/4.
-//
 // Source : https://leetcode.com/problems/target-sum/
 // Author : Bhavesh Mandhan
 // Date   : 2020-10-21
 
 
 /**********************************************************************************
- * You are given a list of non-negative integers, a1, a2, ..., an, and a target, S.
- * Now you have 2 symbols + and -. For each integer, you should choose one from + and -
+ * You are given a list of non-negative integers, a1, a2, ..., an, and a target, S. 
+ * Now you have 2 symbols + and -. For each integer, you should choose one from + and - 
  * as its new symbol.
  *
  * Find out how many ways to assign symbols to make sum of integers equal to target S.
@@ -22,6 +19,7 @@
  * 	+1+1-1+1+1 = 3
  * 	+1+1+1-1+1 = 3
  * 	+1+1+1+1-1 = 3
+
 ***********************************************************************************/
 
 class Solution {
