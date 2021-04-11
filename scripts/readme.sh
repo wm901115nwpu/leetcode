@@ -1,14 +1,14 @@
 #!/bin/bash
 
 pushd `dirname $0` > /dev/null
-SCRIPTPATH=`pwd -P`
+SCRIPT_PATH=`pwd -P`
 popd > /dev/null
-SCRIPTFILE=`basename $0`
+SCRIPT_FILE=`basename $0`
 
 COLOR_INFO='\033[0;36m'
 COLOR_NONE='\033[0m'
 
-source ${SCRIPTPATH}/lib/query_problem.sh
+source ${SCRIPT_PATH}/lib/query_problem.sh
 
 function usage()
 {
@@ -49,3 +49,4 @@ query_problem ${URL} ${QUESTION_TITLE_SLUG}
 FILE=`echo ${FILE} | sed "s/.*\/algorithms/\.\/algorithms/"`
 
 echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | [C++](${FILE})|${QUESTION_DIFFICULTY}|"
+

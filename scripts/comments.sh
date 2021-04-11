@@ -6,14 +6,14 @@ COMMENT_TAG="//"
 FILE_EXT=".cpp"
 
 pushd `dirname $0` > /dev/null
-SCRIPTPATH=`pwd -P`
+SCRIPT_PATH=`pwd -P`
 popd > /dev/null
-SCRIPTFILE=`basename $0`
+SCRIPT_FILE=`basename $0`
 
 COLOR_INFO='\033[0;36m'
 COLOR_NONE='\033[0m'
 
-source ${SCRIPTPATH}/lib/query_problem.sh
+source ${SCRIPT_PATH}/lib/query_problem.sh
 
 function usage()
 {
@@ -22,11 +22,11 @@ function usage()
     echo -e ""
     echo -e "Example:"
     echo -e ""
-    echo -e "   1) Create a file named largestNumber.cpp, and add Copyright & Problem description"
+    echo -e "   1) Create a file named LargestNumber.cpp, and add Copyright & Problem description"
     echo -e "   ${0} https://leetcode.com/problems/largest-number/"
     echo -e ""
     echo -e "   2) Add Copyright & Problem description into existed file"
-    echo -e "   ${0} https://leetcode.com/problems/largest-number/ largestNumber.cpp"
+    echo -e "   ${0} https://leetcode.com/problems/largest-number/ LargestNumber.cpp"
     echo -e ""
 }
 
@@ -73,10 +73,10 @@ get_question_slug ${leetcode_url}
 
 
 TRUE_CMD=`which true`
-xidel=`type -P xidel || ${TRUE_CMD}`
-if [ -z "${xidel}" ]; then
-    echo "xidel not found !"
-    install_xidel
+JQ=`type -P jq || ${TRUE_CMD}`
+if [ -z "${JQ}" ]; then
+    echo "jq command is not found !"
+    install_jq
 fi
 
 #grab the problem information
@@ -156,19 +156,19 @@ function make_comments() {
     # 2) the last two `sed` commands are used to add the comments tags
     case ${STYLE} in
         clike )     echo "${CONTENT}" |
-	                sed 's/^[[:space:]]*$/'"$(printf '\n')"'/g' | cat -s |     # replace the multiple empty line with a single empty line
+	                sed 's/^[[:space:]]*$/'"$(printf '\n')"'/g' | cat -s |         # replace the multiple empty line with a single empty line
                         fold -w ${WIDTH} -s  |                                     # wrap the text at centain column
                         sed 's/^/ * /'  |                                          # add the '*' for each line
-			sed '1i\'$'\n'"/*$(printf '%.0s*' ${WIDTH_SEQ}) "$'\n' |   # add the first line - /***********
+			sed '1i\'$'\n'"/*$(printf '%.0s*' ${WIDTH_SEQ}) "$'\n' |               # add the first line - /***********
                         sed '2i\'$'\n'"@@@*"$'\n' | sed 's/^@@@/ /g' |             # add the second line -  * (lead by a space)
                         sed '$a\'$'\n'"@@@*$(printf '%.0s*' ${WIDTH_SEQ})*/"$'\n'| # add the end line - **********/
 			sed 's/^@@@/ /' > ${OUTPUT_FILE}
                     ;;
         script )    echo "${CONTENT}" |
-	                sed 's/^[[:space:]]*$/'"$(printf '\n')"'/g' | cat -s |     # replace the multiple empty line with a single empty line
+	                sed 's/^[[:space:]]*$/'"$(printf '\n')"'/g' | cat -s |         # replace the multiple empty line with a single empty line
                         fold -w ${WIDTH} -s  |                                     # wrap the text at centain column
                         sed 's/^/# /'  |                                           # add the '*' for each line
-			sed '1i\'$'\n'"#$(printf '%.0s#' ${WIDTH_SEQ}) "$'\n' |    # add the first line - ############
+			sed '1i\'$'\n'"#$(printf '%.0s#' ${WIDTH_SEQ}) "$'\n' |                # add the first line - ############
                         sed '2i\'$'\n'"#"$'\n' |                                   # add the second line - #
                         sed '$a\'$'\n'"#$(printf '%.0s#' ${WIDTH_SEQ})"$'\n' > ${OUTPUT_FILE} # add the end line - #############
                     ;;
